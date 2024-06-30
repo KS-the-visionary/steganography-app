@@ -1,0 +1,1 @@
+Assets used to build steganography page UI
