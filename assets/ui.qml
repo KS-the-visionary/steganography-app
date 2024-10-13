@@ -24,6 +24,8 @@ Window {
     property bool loadText: false
     property bool reduceWidth: false
     property bool switchPage: false
+    property string msgText
+    
     /////////////// ANIMATIONS /////////////////
     // App Load Animation
 
@@ -539,6 +541,7 @@ Window {
                             TextArea {
                                 id: msgData
                                 placeholderText: "Secret Message Here..."
+                                text: msgText
                                 enabled: contentBox.opacity==1 ? true : false
                                 color: "#ffffff"
                                 font.family: jbm.name
@@ -610,7 +613,7 @@ Window {
                             hoverEnabled: true
                             enabled: decodeBtn.opacity==1 ? true : false
                             cursorShape: decodeBtn.opacity==1 ? Qt.PointingHandCursor : Qt.Cursor
-                            onClicked: console.log("Message Decoded!")
+                            onClicked: python.decodeDate()
                         }
                     }
                 }
